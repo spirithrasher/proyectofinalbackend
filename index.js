@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import webpayRoutes from './routes/webpay.routes.js'
 import authRoutes from './routes/auth.routes.js'
 import perfilRoutes from './routes/perfil.routes.js'
+import pedidosRoutes from './routes/pedidos.routes.js'
+import ventasRoutes from './routes/ventas.routes.js'
 
 const app = express();
 dotenv.config();
@@ -23,6 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/',webpayRoutes);
 app.use("/", authRoutes);
 app.use("/", perfilRoutes);
+app.use("/", pedidosRoutes);
+app.use("/", ventasRoutes);
 
 
 app.listen(port, () => {
