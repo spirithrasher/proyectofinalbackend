@@ -3,7 +3,8 @@ import { creartransaccion,confirmarpago } from "../controllers/webpay.controller
 
 const router = Router();
 
-router.get('/crear-transaccion', creartransaccion);
+router.post('/crear-transaccion', creartransaccion);
 router.get('/confirmar-pago', confirmarpago);
+// router.get('/confirmar-pago', confirmarpago);
 
 export default router;
