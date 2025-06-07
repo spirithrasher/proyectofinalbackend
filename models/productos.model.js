@@ -6,3 +6,11 @@ export const getProductos = async () => {
     const result = rows
     return result
 }
+
+export const getProducto = async (id) => {
+    const consulta = "SELECT * FROM products WHERE id = $1 ";
+    const values = [id]
+    const { rows } = await db.query(consulta,values)
+    const result = rows[0]
+    return result
+}

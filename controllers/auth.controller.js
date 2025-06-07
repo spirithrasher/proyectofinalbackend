@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import { verificarCredenciales, findUser,registerUser } from '../models/auth.model.js'
+import { verificarCredenciales, findUser,registerUser,userListado } from '../models/auth.model.js'
 
 const SECRET = process.env.JWT_SECRET;
 
@@ -51,6 +51,18 @@ export const registrar= async (req ,res) => {
 
         res.status(201).json({ token, user: newUser });
 
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+}
+
+export const listado= async (req ,res) => {
+    try {
+        const users = await userListado()
+        console.log(users)
+        res.json({ users });
+        
     } catch (error) {
         console.log(error);
         return res.status(500).json({ message: "Internal server error" });
