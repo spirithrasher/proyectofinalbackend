@@ -19,9 +19,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.get('/products',productos);
-router.post('/products',authenticateToken,upload.single('imagen'), subirProducto);
-router.get('/products/:id', authenticateToken,verProducto);
+router.get('/productos',productos);
+router.post('/productos',authenticateToken,upload.single('imagen'), subirProducto);
+router.get('/productos/:id', authenticateToken,verProducto);
 // router.post('/login', login);
 // router.get('/usuarios', verifyToken, getUser)
 
