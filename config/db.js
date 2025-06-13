@@ -9,7 +9,9 @@ const pool = new Pool({
     user: `${process.env.DB_USER}`,
     password: `${process.env.PASSWORD}`,
     database: `${process.env.DB}`,
-    
+    ssl: {
+        rejectUnauthorized: false
+    },
     allowExitOnIdle: true
 })
 
