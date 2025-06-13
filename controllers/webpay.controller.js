@@ -17,7 +17,7 @@ export const creartransaccion= async (req ,res) => {
     console.log(buyerId,items)
     
     const sessionId = 'session-' + Math.floor(Math.random() * 100000);
-    
+    console.log("creartransaccion::: ",`${process.env.API_BASE_URL}/confirmar-pago`)
     const returnUrl = `${process.env.API_BASE_URL}/confirmar-pago`;
 
     try {
