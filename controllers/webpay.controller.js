@@ -66,7 +66,7 @@ export const creartransaccion= async (req ,res) => {
 }
 
 export const confirmarpago= async (req ,res) => {
-  // console.log("Body recibido de Webpay:", req.query);
+  console.log("Body recibido de Webpay:", req.query);
   const { token_ws } = req.query;
 
   try {
