@@ -20,7 +20,8 @@ console.log(`${process.env.FRONTEND_URL}`)
 const corsOptions = {
     origin: `${process.env.FRONTEND_URL}`,  // Solo se permite el origen "http://example.com"
     methods: ['GET', 'POST', 'PUT', 'DELETE'],     // Solo se permiten los métodos GET y POST
-    allowedHeaders: ['Content-Type', 'Authorization']  // Solo se permiten estos encabezados
+    allowedHeaders: ['Content-Type', 'Authorization'],  // Solo se permiten estos encabezados
+    credentials: true
   };
 
 app.use(cors(corsOptions));
