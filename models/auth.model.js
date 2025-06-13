@@ -15,7 +15,7 @@ export const verificarCredenciales = async (email,password) => {
     // 1. Buscar usuario en la base de datos
     const result = await db.query("SELECT * FROM users WHERE email = $1", [email]);
     const user = result.rows[0];
-
+    console.log('user: ',user)
     if (!user) {
       return 401;
     }
@@ -45,6 +45,12 @@ export const registerUser = async (name,email,password) => {
 }
 
 
+export const userListado = async (name,email,password) => {
+
+    const result = await db.query("SELECT * FROM users");
+    const users = result.rows;
+    return users
+}
 
 
 

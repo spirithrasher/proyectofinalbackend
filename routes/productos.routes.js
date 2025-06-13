@@ -1,7 +1,7 @@
 import { Router } from "express";
 import multer from 'multer';
 import path from 'path';
-import { productos,subirProducto } from "../controllers/productos.controller.js";
+import { productos,subirProducto,verProducto } from "../controllers/productos.controller.js";
 import { authenticateToken } from '../middlewares/authMiddleware.js';
 
 const router = Router();
@@ -19,9 +19,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.get('/productos',productos);
-router.post('/productos',authenticateToken,upload.single('imagen'), subirProducto);
-// router.put('/perfil/:id', authenticateToken,editarPerfil);
+router.get('/products',productos);
+router.post('/products',authenticateToken,upload.single('imagen'), subirProducto);
+router.get('/products/:id', authenticateToken,verProducto);
 // router.post('/login', login);
 // router.get('/usuarios', verifyToken, getUser)
 

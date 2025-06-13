@@ -45,4 +45,4 @@ app.listen(port, () => {
   console.log(`Servidor Webpay corriendo en http://localhost:${port}`);
 });
 
-
+export default app;

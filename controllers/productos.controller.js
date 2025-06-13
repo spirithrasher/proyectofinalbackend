@@ -1,4 +1,4 @@
-import { getProductos } from '../models/productos.model.js'
+import { getProductos,getProducto } from '../models/productos.model.js'
 import pool from '../config/db.js';
 
 export const productos= async (req ,res) => {
@@ -41,4 +41,16 @@ export const subirProducto = async (req, res) => {
     res.status(500).json({ message: 'Error del servidor' });
   }
 };
+
+export const verProducto= async (req ,res) => {
+    const id = req.params.id;
+    console.log('prod id: ',id)
+    try {
+        const result = await getProducto(id)
+        res.json(result);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: "Internal server error" });
+    }
+}
 
