@@ -17,7 +17,7 @@ const port = 3000;
 
 
 const corsOptions = {
-    origin: `${process.env.API_BASE_URL}:${process.env.PORT_REACT}`,  // Solo se permite el origen "http://example.com"
+    origin: `${process.env.API_BASE_URL}`,  // Solo se permite el origen "http://example.com"
     methods: ['GET', 'POST', 'PUT', 'DELETE'],     // Solo se permiten los métodos GET y POST
     allowedHeaders: ['Content-Type', 'Authorization']  // Solo se permiten estos encabezados
   };
